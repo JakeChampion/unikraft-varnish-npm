@@ -9,4 +9,4 @@ labels:
 
 rootfs: ./Dockerfile.vcl
 
-cmd: bash -c "stunnel /etc/stunnel/stunnel.conf & varnishd -F -a :6081 -f /etc/varnish/default.vcl"
+cmd: ["/usr/local/bin/entrypoint.sh"]

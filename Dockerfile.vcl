@@ -14,7 +14,8 @@ COPY stunnel.conf /etc/stunnel/stunnel.conf
 
 COPY default.vcl /etc/varnish/default.vcl
 
+COPY entrypoint.sh /usr/local/bin/entrypoint.sh
+
 EXPOSE 6081 8443
 
-CMD stunnel /etc/stunnel/stunnel.conf & \
-    varnishd -F -a :6081 -f /etc/varnish/default.vcl
+CMD ["/usr/local/bin/entrypoint.sh"]
